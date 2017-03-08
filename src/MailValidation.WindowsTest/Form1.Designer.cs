@@ -31,6 +31,7 @@
             this.btnValidate = new System.Windows.Forms.Button();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnValidateExt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnValidate
@@ -59,11 +60,22 @@
             this.txtEmail.Size = new System.Drawing.Size(376, 20);
             this.txtEmail.TabIndex = 2;
             // 
+            // btnValidateExt
+            // 
+            this.btnValidateExt.Location = new System.Drawing.Point(198, 54);
+            this.btnValidateExt.Name = "btnValidateExt";
+            this.btnValidateExt.Size = new System.Drawing.Size(160, 23);
+            this.btnValidateExt.TabIndex = 3;
+            this.btnValidateExt.Text = "Validate-Ext";
+            this.btnValidateExt.UseVisualStyleBackColor = true;
+            this.btnValidateExt.Click += new System.EventHandler(this.btnValidateExt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(511, 100);
+            this.Controls.Add(this.btnValidateExt);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnValidate);
@@ -79,6 +91,7 @@
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnValidateExt;
     }
 }
 

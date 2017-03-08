@@ -26,5 +26,14 @@ namespace MailValidation.WindowsTest
                 MessageBox.Show(mailVerify.Validate(txtEmail.Text).ToString());
             }
         }
+
+        private void btnValidateExt_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show(txtEmail.Text.MailValidate().ToString());
+            }
+
+        }
     }
 }

@@ -4,14 +4,16 @@
     {
         public static bool MailVerify(this string email)
         {
-            return true;
+            MailVerify mailVerify = new MailVerify();
+            return mailVerify.Validate(email) == ValidationStatus.OK;
         }
 
 
-        //public static ValidationStatus MailVerify(this string email)
-        //{
-        //    return ValidationStatus.OK;
-        //}
+        public static ValidationStatus MailValidate(this string email)
+        {
+            MailVerify mailVerify = new MailVerify();
+            return mailVerify.Validate(email);
+        }
     }
 
 }
