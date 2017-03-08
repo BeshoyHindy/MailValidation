@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using ARSoft.Tools.Net;
 using ARSoft.Tools.Net.Dns;
 using MailValidation.Verify.Exceptions;
 using MailValidation.Verify.SMTP;
 
-namespace MailValidation.Verify
+namespace MailValidation.Verify.Validation
 {
   public  class MailVerify
     {
@@ -77,16 +75,13 @@ namespace MailValidation.Verify
                         switch (resultCode)
                         {
                             case SmtpStatusCode.Ok:
-                                result = ValidationStatus.OK;
-                                return true;
+                                return  ValidationStatus.OK;
 
                             case SmtpStatusCode.ExceededStorageAllocation:
-                                result = ValidationStatus.MailboxStorageExceeded;
-                                return true;
+                                return ValidationStatus.MailboxStorageExceeded;
 
                             case SmtpStatusCode.MailboxUnavailable:
-                                result = ValidationStatus.MailboxUnavailable;
-                                return true;
+                                return  ValidationStatus.MailboxUnavailable;
                         }
                     }
                 }
@@ -100,12 +95,10 @@ namespace MailValidation.Verify
 
             if (mxRecords.Count > 0)
             {
-                result = ValidationStatus.MailServerUnavailable;
-                return false;
+                return ValidationStatus.MailServerUnavailable;
             }
 
-            result = ValidationStatus.Undefined;
-            return false;
+            return ValidationStatus.Undefined;
         }
 
     }
