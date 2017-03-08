@@ -1,4 +1,4 @@
-﻿namespace MailValidation.Verify
+﻿namespace MailValidation.Verify.Validation
 {
     public enum ValidationStatus
     {

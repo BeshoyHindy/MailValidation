@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailValidation.VerifyAPI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailValidation.WebTest", "MailValidation.WebTest\MailValidation.WebTest.csproj", "{F86FDD29-D7E1-45DD-86AE-4A3164F54347}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailValidation.WindowsTest", "MailValidation.WindowsTest\MailValidation.WindowsTest.csproj", "{EA9E0513-08A8-4FF2-BB58-BC5763E9210E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F86FDD29-D7E1-45DD-86AE-4A3164F54347}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F86FDD29-D7E1-45DD-86AE-4A3164F54347}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F86FDD29-D7E1-45DD-86AE-4A3164F54347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA9E0513-08A8-4FF2-BB58-BC5763E9210E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA9E0513-08A8-4FF2-BB58-BC5763E9210E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA9E0513-08A8-4FF2-BB58-BC5763E9210E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA9E0513-08A8-4FF2-BB58-BC5763E9210E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

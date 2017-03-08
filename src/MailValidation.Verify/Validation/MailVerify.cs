@@ -9,7 +9,7 @@ using MailValidation.Verify.SMTP;
 
 namespace MailValidation.Verify.Validation
 {
-  public  class MailVerify
+    public class MailVerify
     {
         /// <summary>
         /// 
@@ -34,12 +34,12 @@ namespace MailValidation.Verify.Validation
             }
             catch (ArgumentNullException e)
             {
-                return  ValidationStatus.AddressIsEmpty;
+                return ValidationStatus.AddressIsEmpty;
             }
             catch (ArgumentException e)
             {
                 return ValidationStatus.AddressIsEmpty;
- }
+            }
             catch (FormatException e)
             {
                 return ValidationStatus.InvalidFormat;
@@ -53,6 +53,10 @@ namespace MailValidation.Verify.Validation
             //////////////////
 
             DomainName domainName = DomainName.Parse(mailAddress.Host);
+            if (DisposableList.DisposableMap.IsDisposable(mailAddress.Host))
+            {
+                return ValidationStatus.MailboxIsDisposable;
+            }
             DnsMessage dnsResponse = DnsClient.Default.Resolve(domainName, RecordType.Mx);
 
             IList<MxRecord> mxRecords = dnsResponse.AnswerRecords.OfType<MxRecord>().ToList();
@@ -75,13 +79,13 @@ namespace MailValidation.Verify.Validation
                         switch (resultCode)
                         {
                             case SmtpStatusCode.Ok:
-                                return  ValidationStatus.OK;
+                                return ValidationStatus.OK;
 
                             case SmtpStatusCode.ExceededStorageAllocation:
                                 return ValidationStatus.MailboxStorageExceeded;
 
                             case SmtpStatusCode.MailboxUnavailable:
-                                return  ValidationStatus.MailboxUnavailable;
+                                return ValidationStatus.MailboxUnavailable;
                         }
                     }
                 }
